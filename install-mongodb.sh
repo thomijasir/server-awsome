@@ -32,6 +32,10 @@ echo "deb [ signed-by=/usr/share/keyrings/mongodb-server-7.0.gpg ] http://repo.m
 sudo apt-get update
 sudo apt-get install -y mongodb-org
 
+# add MongoDB Permission
+sudo chown -R mongodb:mongodb /var/lib/mongodb
+sudo chown mongodb:mongodb /tmp/mongodb-27017.sock
+
 # Start MongoDB service
 sudo systemctl start mongod
 sudo systemctl enable mongod
@@ -39,7 +43,8 @@ sudo systemctl enable mongod
 # Create admin user
 mongosh admin --eval "db.createUser({user: '$MONGO_USERNAME', pwd: '$MONGO_PASSWORD', roles: ['root']})"
 
-# Enable authentication
+# Configure MongoDB to bind to all IP addresses
+sudo sed -i 's/bindIp: 127.0.0.1/bindIp: 0.0.0.0/' /etc/mongod.conf
 sudo sed -i 's/#security:/security:\n  authorization: enabled/' /etc/mongod.conf
 
 # Restart MongoDB service
