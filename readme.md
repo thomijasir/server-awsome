@@ -99,7 +99,11 @@ These scripts are provided for convenience and may not be suitable for all produ
 - Using key-based SSH authentication
 - Regularly monitoring your systems for unusual activity
 
-## Support
+## Disclaimer
+
+These scripts are provided as-is, without warranty of any kind. Use them at your own risk. Always test in a safe environment before using in production.
+
+## Supports
 
 If you find these scripts helpful, please consider:
 
@@ -107,10 +111,6 @@ If you find these scripts helpful, please consider:
 - Contributing to the improvement of the scripts
 - Reporting any issues or suggesting enhancements
 
-## Disclaimer
+Buy me coffee if you like these scripts! ☕️
 
-These scripts are provided as-is, without warranty of any kind. Use them at your own risk. Always test in a safe environment before using in production.
-
-## Credits
-
-Buy me coffee if you like these scripts! ☕️ paypal.me/thomijasir
+- [paypal.me/thomijasir](paypal.me/thomijasir)
